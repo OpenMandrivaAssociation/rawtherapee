@@ -1,9 +1,9 @@
-%global rtlastrev changeset:1583:1a1fe5838576
-%global rtlasttag Latest-tag:4.0.4,CSet:1583:1a1fe5838576
+%global rtlastrev changeset:1674:69b8bd8bb944
+%global rtlasttag Latest-tag:4.0.6,CSet:1674:69b8bd8bb944
 
 Name:		rawtherapee
-Version:	4.0.4
-Release:	%mkrel 1
+Version:	4.0.6
+Release:	1
 Summary:	Raw image processing software
 
 Group:		Editors 
@@ -14,23 +14,22 @@ Source1:	%{name}.desktop
 Source2:	rawtherapee-icons-3.0.1.tar
 
 BuildRequires:	cmake >= 2.6
+BuildRequires:	mercurial
 BuildRequires:	lcms2-devel
 BuildRequires:	gtk2-devel >= 2.12
 BuildRequires:	gtkmm2.4-devel
 BuildRequires:	lcms-devel  libjpeg-devel libtiff-devel
 BuildRequires:	libpng-devel libiptcdata-devel desktop-file-utils
-Patch0:		libpng1_5_rawthe.patch	
+Patch0:		libpng1_5_rawthe.patch
 Requires:	hicolor-icon-theme
-
 
 %description
 Rawtherapee is a RAW image processing software. It gives full control over
 many parameters to enhance the raw picture before finally exporting it
 to some common image format.
 
-
 %prep
-%setup -q
+%setup -q -n %{name}
 %patch0 -p1
 
 # fix wrong line endings
@@ -58,26 +57,24 @@ See package informations
 EOF
 
 %build
-cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} -DCMAKE_BUILD_TYPE=None -DAUTOMATED_BUILD_SYSTEM:BOOL=ON -DLIBDIR=%{_libdir}  -DBINDIR=%{_bindir} .
-make VERBOSE=1 %{?_smp_mflags}
-
+mkdir build/
+cd build/
+cmake ../ -DCMAKE_INSTALL_PREFIX=%{_prefix} -DCMAKE_BUILD_TYPE=None -DAUTOMATED_BUILD_SYSTEM:BOOL=ON -DLIBDIR=%{_libdir}  -DBINDIR=%{_bindir}
+%make
 
 %install
-rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT 
+cd build/
+%makeinstall_std
 
 desktop-file-install --dir $RPM_BUILD_ROOT/%{_datadir}/applications/ %{SOURCE1}
 
-mkdir -p $RPM_BUILD_ROOT/%{_datadir}/icons/hicolor/16x16/apps/
-mkdir -p $RPM_BUILD_ROOT/%{_datadir}/icons/hicolor/32x32/apps/
+mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/16x16/apps/
+mkdir -p %{buildroot}/%{_datadir}/icons/hicolor/32x32/apps/
 
 
 
 # These file are taken from the root already
-rm -rf $RPM_BUILD_ROOT%{_datadir}/doc/rawtherapee
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}%{_datadir}/doc/rawtherapee
 
 %post
 touch --no-create %{_datadir}/icons/hicolor

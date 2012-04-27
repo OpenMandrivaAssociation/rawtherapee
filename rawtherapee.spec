@@ -18,6 +18,7 @@ BuildRequires:	png-devel
 BuildRequires:	zlib-devel
 BuildRequires:	bzip2-devel
 BuildRequires:	pkgconfig(libiptcdata)
+BuildRequires:	mercurial
 Requires:	hicolor-icon-theme
 
 %description

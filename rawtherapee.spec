@@ -1,7 +1,7 @@
 %define _disable_ld_no_undefined 1
 
 Name:		rawtherapee
-Version:	4.0.8
+Version:	4.0.9
 Release:	%mkrel 1
 Summary:	Raw image processing software
 Group:		Graphics

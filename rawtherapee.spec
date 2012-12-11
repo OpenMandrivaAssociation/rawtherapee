@@ -64,3 +64,23 @@ EOF
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/rawtherapee.png
+
+
+%changelog
+* Mon Jun 04 2012 Alexander Khrukin <akhrukin@mandriva.org> 4.0.9-1mdv2012.0
++ Revision: 802347
+- BR pkgconfig(expat)
+- version update 4.0.9
+
+* Fri Apr 27 2012 Andrey Bondrov <abondrov@mandriva.org> 4.0.8-1
++ Revision: 793934
+- New version 4.0.8, drop useless patches and sources, convert Fedora spec to Mandriva style
+
+* Wed Dec 07 2011 Alexander Khrukin <akhrukin@mandriva.org> 4.0.6-1
++ Revision: 738577
+- version update 4.0.6
+
+* Tue Oct 25 2011 Alexander Barakin <abarakin@mandriva.org> 4.0.4-1
++ Revision: 707133
+- imported package rawtherapee
+

@@ -1,0 +1,19 @@
+--- rawtherapee-7df170026476/rtengine/CMakeLists.txt.0000	2092-08-05 00:00:00.000000000 +0800
++++ rawtherapee-7df170026476/rtengine/CMakeLists.txt	2014-02-06 11:17:30.301465525 +0800
+@@ -26,7 +26,7 @@
+ 
+ include_directories (BEFORE "${CMAKE_CURRENT_BINARY_DIR}")
+ 
+-add_library (rtengine ${RTENGINESOURCEFILES})
++add_library (rtengine STATIC ${RTENGINESOURCEFILES})
+ #It may be nice to store library version too
+ IF (BUILD_SHARED_LIBS)
+     install (TARGETS rtengine DESTINATION ${LIBDIR})
+--- rawtherapee-7df170026476/rtexif/CMakeLists.txt.0000	2092-08-05 00:00:00.000000000 +0800
++++ rawtherapee-7df170026476/rtexif/CMakeLists.txt	2014-02-06 11:18:15.512733770 +0800
+@@ -1,4 +1,4 @@
+-add_library (rtexif rtexif.cc stdattribs.cc nikonattribs.cc canonattribs.cc
++add_library (rtexif STATIC rtexif.cc stdattribs.cc nikonattribs.cc canonattribs.cc
+     pentaxattribs.cc fujiattribs.cc sonyminoltaattribs.cc olympusattribs.cc kodakattribs.cc)
+ 
+ IF (WIN32)

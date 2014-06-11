@@ -57,5 +57,5 @@ rm -rf %{buildroot}%{_datadir}/doc/rawtherapee
 %{_bindir}/camconst.json
 %{_datadir}/rawtherapee
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/*/apps/rawtherapee.png
+%{_iconsdir}/hicolor/*/apps/rawtherapee.png
 %{_mandir}/man1/%{name}.1*

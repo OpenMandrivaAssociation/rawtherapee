@@ -1,5 +1,5 @@
 Name:		rawtherapee
-Version:	4.0.12
+Version:	4.1
 Release:	1
 Summary:	Raw image processing software
 Group:		Graphics

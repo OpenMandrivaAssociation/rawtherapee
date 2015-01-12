@@ -1,5 +1,5 @@
 Name:		rawtherapee
-Version:	4.0.12
+Version:	4.1
 Release:	1
 Summary:	Raw image processing software
 Group:		Graphics
@@ -54,7 +54,7 @@ rm -rf %{buildroot}%{_datadir}/doc/rawtherapee
 %files
 %doc AUTHORS.txt LICENSE.txt COMPILE.txt RELEASE_NOTES.txt
 %{_bindir}/rawtherapee
-%{_bindir}/camconst.json
+# %{_bindir}/camconst.json
 %{_datadir}/rawtherapee
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/rawtherapee.png

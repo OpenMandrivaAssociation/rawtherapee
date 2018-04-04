@@ -1,6 +1,6 @@
 Name:		rawtherapee
-Version:	4.1
-Release:	2
+Version:	5.4
+Release:	1
 Summary:	Raw image processing software
 Group:		Graphics
 License:	GPLv3 and MIT and IJG

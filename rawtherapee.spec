@@ -19,7 +19,7 @@ BuildRequires:	pkgconfig(glibmm-2.4) >= 2.16
 BuildRequires:	pkgconfig(gobject-2.0) >= 2.16
 BuildRequires:	pkgconfig(gthread-2.0) >= 2.16
 BuildRequires:	pkgconfig(gtk+-2.0) >= 2.12
-BuildRequires:	pkgconfig(gtkmm-2.4) >= 2.22
+BuildRequires:	pkgconfig(gtkmm-3.0)
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	pkgconfig(libcanberra-gtk)
 BuildRequires:	pkgconfig(libiptcdata)

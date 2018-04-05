@@ -6,7 +6,7 @@ Group:		Graphics
 License:	GPLv3 and MIT and IJG
 URL:		http://www.rawtherapee.com/
 Source0:	http://rawtherapee.com/shared/source/%{name}-%{version}.tar.xz
-Patch0:		rawtherapee-4.0.12-link.patch
+#Patch0:		rawtherapee-4.0.12-link.patch
 Patch1:		dcraw-9.19-CVE-2013-1438.patch
 BuildRequires:	cmake >= 2.6
 BuildRequires:	pkgconfig(expat) >= 2.0

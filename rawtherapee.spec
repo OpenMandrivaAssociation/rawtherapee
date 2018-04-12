@@ -58,7 +58,9 @@ rm -rf %{buildroot}%{_datadir}/doc/rawtherapee
 %doc AUTHORS.txt LICENSE.txt COMPILE.txt RELEASE_NOTES.txt
 %{_bindir}/rawtherapee
 # %{_bindir}/camconst.json
+%{_bindir}/rawtherapee-cli
 %{_datadir}/rawtherapee
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/metainfo/%{name}.appdata.xml
 %{_iconsdir}/hicolor/*/apps/rawtherapee.png
 %{_mandir}/man1/%{name}.1*

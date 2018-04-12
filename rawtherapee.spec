@@ -6,6 +6,7 @@ Group:		Graphics
 License:	GPLv3 and MIT and IJG
 URL:		http://www.rawtherapee.com/
 Source0:	http://rawtherapee.com/shared/source/%{name}-%{version}.tar.xz
+# Patch 0 and 1 no needed anymore.
 #Patch0:		rawtherapee-4.0.12-link.patch
 #Patch1:		dcraw-9.19-CVE-2013-1438.patch
 BuildRequires:	cmake >= 2.6
@@ -43,6 +44,7 @@ to some common image format.
 %apply_patches
 
 %build
+# Force GCC due to clang crash at build
 export CC=gcc
 export CXX=g++
 %cmake -DBUILD_SHARED_LIBS=OFF

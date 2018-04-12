@@ -43,6 +43,8 @@ to some common image format.
 %apply_patches
 
 %build
+export CC=gcc
+export CXX=g++
 %cmake -DBUILD_SHARED_LIBS=OFF
 %make
 

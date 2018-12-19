@@ -1,4 +1,4 @@
-%global optflags %{optflags} -latomic
+#global optflags %{optflags} -latomic
 
 Name:		rawtherapee
 Version:	5.5
@@ -34,6 +34,7 @@ BuildRequires:	jpeg-devel
 BuildRequires:	tiff-devel
 BuildRequires:	png-devel
 BuildRequires:	libgomp-devel
+BuildRequires:  libatomic-devel
 Requires:	hicolor-icon-theme
 
 %description
@@ -47,8 +48,8 @@ to some common image format.
 
 %build
 # Force GCC due to clang crash at build
-#export CC=gcc
-#export CXX=g++
+export CC=gcc
+export CXX=g++
 %cmake -DBUILD_SHARED_LIBS=OFF
 %make
 

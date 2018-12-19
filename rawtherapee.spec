@@ -1,3 +1,5 @@
+%global optflags %{optflags} -latomic
+
 Name:		rawtherapee
 Version:	5.5
 Release:	1

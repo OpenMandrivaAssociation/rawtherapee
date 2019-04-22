@@ -51,7 +51,9 @@ to some common image format.
 # Force GCC due to clang crash at build
 #export CC=gcc
 #export CXX=g++
-%cmake -DBUILD_SHARED_LIBS=OFF
+%cmake \
+  -DBUILD_SHARED_LIBS=OFF \
+  -DWITH_BENCHMARK="ON"
 %make_build
 
 %install

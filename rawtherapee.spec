@@ -1,7 +1,7 @@
 #global optflags %{optflags} -latomic
 
 Name:		rawtherapee
-Version:	5.5
+Version:	5.6
 Release:	1
 Summary:	Raw image processing software
 Group:		Graphics

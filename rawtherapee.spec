@@ -8,9 +8,7 @@ Group:		Graphics
 License:	GPLv3 and MIT and IJG
 URL:		http://www.rawtherapee.com/
 Source0:	http://rawtherapee.com/shared/source/%{name}-%{version}.tar.xz
-# Patch 0 and 1 no needed anymore.
-#Patch0:		rawtherapee-4.0.12-link.patch
-#Patch1:		dcraw-9.19-CVE-2013-1438.patch
+
 BuildRequires:	cmake >= 2.6
 BuildRequires:	pkgconfig(expat) >= 2.0
 BuildRequires:	pkgconfig(fftw3)
@@ -52,10 +50,10 @@ to some common image format.
 #export CC=gcc
 #export CXX=g++
 %cmake -DBUILD_SHARED_LIBS=OFF
-%make
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
 # These file are taken from the root already
 rm -rf %{buildroot}%{_datadir}/doc/rawtherapee
@@ -67,6 +65,6 @@ rm -rf %{buildroot}%{_datadir}/doc/rawtherapee
 %{_bindir}/rawtherapee-cli
 %{_datadir}/rawtherapee
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/metainfo/%{name}.appdata.xml
+%{_datadir}/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %{_iconsdir}/hicolor/*/apps/rawtherapee.png
 %{_mandir}/man1/%{name}.1*

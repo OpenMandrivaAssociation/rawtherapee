@@ -28,6 +28,7 @@ BuildRequires:	pkgconfig(lensfun)
 BuildRequires:	pkgconfig(libcanberra-gtk)
 BuildRequires:	pkgconfig(libiptcdata)
 BuildRequires:	pkgconfig(sigc++-2.0)
+BuildRequires:  pkgconfig(librsvg-2.0)
 BuildRequires:	bzip2-devel
 BuildRequires:	mercurial
 BuildRequires:	jpeg-devel

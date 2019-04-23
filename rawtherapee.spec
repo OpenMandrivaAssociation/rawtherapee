@@ -53,6 +53,7 @@ to some common image format.
 #export CXX=g++
 %cmake \
   -DBUILD_SHARED_LIBS=OFF \
+  -DOPTION_OMP="ON" \
   -DWITH_BENCHMARK="ON"
 %make_build
 

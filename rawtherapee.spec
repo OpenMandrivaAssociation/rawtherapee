@@ -1,16 +1,16 @@
 #global optflags %{optflags} -latomic
 
+%global optflags %{optflags} -O3
+
 Name:		rawtherapee
-Version:	5.5
+Version:	5.6
 Release:	1
 Summary:	Raw image processing software
 Group:		Graphics
 License:	GPLv3 and MIT and IJG
 URL:		http://www.rawtherapee.com/
 Source0:	http://rawtherapee.com/shared/source/%{name}-%{version}.tar.xz
-# Patch 0 and 1 no needed anymore.
-#Patch0:		rawtherapee-4.0.12-link.patch
-#Patch1:		dcraw-9.19-CVE-2013-1438.patch
+
 BuildRequires:	cmake >= 2.6
 BuildRequires:	pkgconfig(expat) >= 2.0
 BuildRequires:	pkgconfig(fftw3)
@@ -28,6 +28,7 @@ BuildRequires:	pkgconfig(lensfun)
 BuildRequires:	pkgconfig(libcanberra-gtk)
 BuildRequires:	pkgconfig(libiptcdata)
 BuildRequires:	pkgconfig(sigc++-2.0)
+BuildRequires:  pkgconfig(librsvg-2.0)
 BuildRequires:	bzip2-devel
 BuildRequires:	mercurial
 BuildRequires:	jpeg-devel
@@ -50,11 +51,14 @@ to some common image format.
 # Force GCC due to clang crash at build
 #export CC=gcc
 #export CXX=g++
-%cmake -DBUILD_SHARED_LIBS=OFF
-%make
+%cmake \
+  -DBUILD_SHARED_LIBS=OFF \
+  -DOPTION_OMP="ON" \
+  -DWITH_BENCHMARK="ON"
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
 # These file are taken from the root already
 rm -rf %{buildroot}%{_datadir}/doc/rawtherapee
@@ -66,6 +70,6 @@ rm -rf %{buildroot}%{_datadir}/doc/rawtherapee
 %{_bindir}/rawtherapee-cli
 %{_datadir}/rawtherapee
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/metainfo/%{name}.appdata.xml
+%{_datadir}/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %{_iconsdir}/hicolor/*/apps/rawtherapee.png
 %{_mandir}/man1/%{name}.1*

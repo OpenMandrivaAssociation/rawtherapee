@@ -3,8 +3,8 @@
 %global optflags %{optflags} -O3
 
 Name:		rawtherapee
-Version:	5.7
-Release:	2
+Version:	5.8
+Release:	1
 Summary:	Raw image processing software
 Group:		Graphics
 License:	GPLv3 and MIT and IJG

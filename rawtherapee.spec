@@ -73,4 +73,5 @@ rm -rf %{buildroot}%{_datadir}/doc/rawtherapee
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %{_iconsdir}/hicolor/*/apps/rawtherapee.png
+%{_iconsdir}/hicolor/scalable/apps/rawtherapee.svg
 %{_mandir}/man1/%{name}.1*

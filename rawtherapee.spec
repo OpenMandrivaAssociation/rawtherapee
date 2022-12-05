@@ -65,7 +65,7 @@ to some common image format.
 rm -rf %{buildroot}%{_datadir}/doc/rawtherapee
 
 %files
-%doc AUTHORS.txt LICENSE.txt RELEASE_NOTES.txt
+%doc AUTHORS.txt RELEASE_NOTES.txt
 %{_bindir}/rawtherapee
 # %{_bindir}/camconst.json
 %{_bindir}/rawtherapee-cli

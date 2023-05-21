@@ -1,0 +1,10 @@
+--- a/rtengine/dcraw.h
++++ b/rtengine/dcraw.h
+@@ -20,6 +20,7 @@
+ #pragma once
+ 
+ #include "myfile.h"
++#include <cstdint>
+ #include <csetjmp>
+ 
+ 

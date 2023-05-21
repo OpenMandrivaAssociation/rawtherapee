@@ -4,7 +4,7 @@
 
 Name:		rawtherapee
 Version:	5.9
-Release:	2
+Release:	3
 Summary:	Raw image processing software
 Group:		Graphics
 License:	GPLv3 and MIT and IJG
@@ -13,6 +13,7 @@ URL:		http://www.rawtherapee.com/
 Source0:	http://rawtherapee.com/shared/source/%{name}-%{version}.tar.xz
 
 BuildRequires:	cmake >= 3.5
+BuildRequires:	ninja
 BuildRequires:	pkgconfig(expat) >= 2.0
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	pkgconfig(fftw3f)
@@ -45,21 +46,21 @@ many parameters to enhance the raw picture before finally exporting it
 to some common image format.
 
 %prep
-%setup -q -n %{name}-%{version}
-%autopatch -p1
+%autosetup -p1
 
 %build
 # Force GCC due to clang crash at build
 #export CC=gcc
 #export CXX=g++
 %cmake \
-  -DBUILD_SHARED_LIBS=OFF \
-  -DOPTION_OMP="ON" \
-  -DWITH_BENCHMARK="ON"
-%make_build
+	-DBUILD_SHARED_LIBS=OFF \
+	-DOPTION_OMP="ON" \
+	-DWITH_BENCHMARK="ON" \
+	-GNinja
+%ninja_build
 
 %install
-%make_install -C build
+%ninja_install -C build
 
 # These file are taken from the root already
 rm -rf %{buildroot}%{_datadir}/doc/rawtherapee

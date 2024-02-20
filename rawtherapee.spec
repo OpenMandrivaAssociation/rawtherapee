@@ -26,6 +26,7 @@ BuildRequires:	pkgconfig(gobject-2.0) >= 2.16
 BuildRequires:	pkgconfig(gthread-2.0) >= 2.16
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gtkmm-3.0)
+BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	pkgconfig(lensfun)
 BuildRequires:	pkgconfig(libcanberra-gtk)

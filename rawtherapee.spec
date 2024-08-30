@@ -13,7 +13,7 @@ URL:		https://www.rawtherapee.com/
 Source0:	https://github.com/Beep6581/RawTherapee/releases/download/%{version}/rawtherapee-%{version}.tar.xz
 # Looks like no longer updated
 #Source0:	https://rawtherapee.com/shared/source/%{name}-%{version}.tar.xz
-Patch0:		rawtherapee-5.10-clang16.patch
+#Patch0:		rawtherapee-5.10-clang16.patch
 
 BuildRequires:	cmake >= 3.5
 BuildRequires:	ninja

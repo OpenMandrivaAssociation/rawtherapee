@@ -3,7 +3,7 @@
 %global optflags %{optflags} -O3
 
 Name:		rawtherapee
-Version:	5.12
+Version:	5.13
 Release:	1
 Summary:	Raw image processing software
 Group:		Graphics

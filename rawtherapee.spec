@@ -17,6 +17,7 @@ Source0:	https://github.com/Beep6581/RawTherapee/releases/download/%{version}/ra
 
 BuildRequires:	cmake >= 3.5
 BuildRequires:	ninja
+BuildRequires:	slibtool
 BuildRequires:	pkgconfig(expat) >= 2.0
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	pkgconfig(fftw3f)

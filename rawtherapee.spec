@@ -20,6 +20,7 @@ BuildRequires:	ninja
 BuildRequires:	pkgconfig(expat) >= 2.0
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	pkgconfig(fftw3f)
+BuildRequires:	pkgconfig(fmt)
 BuildRequires:	pkgconfig(gio-2.0) >= 2.16
 BuildRequires:	pkgconfig(giomm-2.4) >= 2.12
 BuildRequires:	pkgconfig(glib-2.0) >= 2.16

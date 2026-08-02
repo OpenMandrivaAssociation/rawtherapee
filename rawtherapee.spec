@@ -59,6 +59,7 @@ to some common image format.
 #export CXX=g++
 %cmake \
 	-DBUILD_SHARED_LIBS=OFF \
+	-DWITH_SYSTEM_FMT=ON \
 	-DOPTION_OMP="ON" \
 	-DWITH_BENCHMARK="ON" \
 	-GNinja
